@@ -1,20 +1,8 @@
-provider "google" {
-  version = "2.14"
-  region = "us-east1"
-}
-
-provider "archive" {
-  version = "~> 1.2"
-}
-
-provider "random" {
-  version = "~> 2.2"
-}
 
 data "google_client_config" "current" {}
 
 resource "google_storage_bucket" "bucket" {
-  name     = "gcp-bucket-kitchen-osma1"
+  name     = "gcp-bucket-hug-82q340"
   location = "us-east1"
   storage_class = "REGIONAL"
   force_destroy = true
@@ -47,20 +35,5 @@ module "gcp_cloud_function_event_based" {
   dependencies = [
     "${google_storage_bucket.bucket.name}"
   ]
-  # Using exiting Bucket with Prefix
-  source_archive_object_prefix = "storageevent-" # Moving Code to Storage Event Prefix
-}
 
-
-
-output "gcp_project_id" {
-  value = "${data.google_client_config.current.project}"
-}
-
-output "location" {
-  value = "us-east1"
-}
-
-output "cloud_function" {
-  value = "${module.gcp_cloud_function_event_based.functions[0]}"
 }

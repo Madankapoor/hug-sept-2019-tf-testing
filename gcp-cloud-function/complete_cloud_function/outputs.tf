@@ -10,9 +10,3 @@ output "functions" {
     google_cloudfunctions_function.http_based_cloud_function.*.name
   )}"
 }
-
-
-output "service_account_email" {
-  description = "The custom service account created for the cloud function."
-  value = "${google_service_account.service_account.email}"
-}

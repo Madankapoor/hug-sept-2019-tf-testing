@@ -44,14 +44,6 @@ variable "timeout" {
 }
 
 
-# We create a service account for runtime with required roles.
-# If this is empty, no service account is created. Default Service Account is used.
-variable "service_account_roles" {
-  description = "The list of gcp roles to be attached to the service account. Note the cross project roles should be of form project/<project_id>/roles/<role_id>."
-  type        = "list"
-  default     = [ "roles/cloudfunctions.serviceAgent" ]
-}
-
 variable "labels" {
   description = "The list of labels to be added to the cloud function"
   type        = "map"

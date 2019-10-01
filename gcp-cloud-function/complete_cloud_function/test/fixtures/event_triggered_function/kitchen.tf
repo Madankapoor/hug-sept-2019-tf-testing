@@ -35,8 +35,6 @@ module "gcp_cloud_function_event_based" {
   event_trigger_type     = "google.storage.object.finalize"
   event_trigger_resource = "${google_storage_bucket.bucket.name}"
 
-  service_account_roles = [ "roles/cloudfunctions.serviceAgent" ]
-
   env_variables = {
     TF     = "true"
     MODULE = "gcp-cloud-function"

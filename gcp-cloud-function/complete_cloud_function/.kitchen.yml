@@ -17,7 +17,7 @@ platforms:
 suites:
   - name: http_triggered_function
     driver:
-      root_module_directory: test/fixtures/http_event
+      root_module_directory: test/fixtures/http_triggered_function
   - name: event_triggered_function
     driver:
-      root_module_directory: test/fixtures/storage_event
+      root_module_directory: test/fixtures/event_triggered_function

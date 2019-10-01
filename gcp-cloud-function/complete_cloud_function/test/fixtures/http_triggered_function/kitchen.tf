@@ -14,20 +14,19 @@ provider "random" {
 data "google_client_config" "current" {}
 
 module "gcp_cloud_function_http" {
-  source = "../"
+  source = "../../.."
   providers = {
     google = "google"
   }
   name            = "custom-cloud-function"
   artifact_dir    = "${path.module}/cloud_function"
+
   entry_point     = "main"
   runtime         = "python37"
   trigger_http    = "true"
 
-  service_account_roles = [ "roles/cloudfunctions.serviceAgent" ]
-
   project_id = "${data.google_client_config.current.project}"
-  region     = "us-east1"
+  region = "us-east1"
 }
 
 

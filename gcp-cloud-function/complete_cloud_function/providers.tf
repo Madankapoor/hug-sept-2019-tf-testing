@@ -9,3 +9,8 @@ provider "random" {
 provider "null" {
   version = "~> 2.1"
 }
+
+provider "google" {
+  version = "~> 2.14"
+  region  = "${var.region}"
+}

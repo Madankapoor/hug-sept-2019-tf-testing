@@ -5,16 +5,9 @@
 \#*#
 .*.sw[a-z]
 *.un~
-
 .kitchen/
 .kitchen.local.yml
-
 .terraform/
 terraform.tfstate.d/
-
-adc.json
-
 .cloud_function_zip/
 .cloud_function_zip/*
-
-test/fixtures/bigquery
